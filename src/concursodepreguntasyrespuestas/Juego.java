@@ -38,6 +38,7 @@ public class Juego {
             
             System.out.println("\nIniciar el juego? ingrese si o no(en caso de ingresar no te volvera a pedir los datos iniciales)");
             String resp=entrada.next();
+            
         }
     }
 }

@@ -15,8 +15,9 @@ import java.util.Scanner;
 public class Juego {
     static ArrayList <String> niveles= new ArrayList<>();
     static ArrayList <Integer> categorias= new ArrayList<>();
+    static ArrayList <String> preguntas= new ArrayList<>();
+    static ArrayList <String> opciones= new ArrayList<>();
     
-
     public static void main(String[] args) {
         
         int respw=1;
@@ -38,6 +39,10 @@ public class Juego {
             int numron=ron.NumRondas();
             
             Preguntas pre= new Preguntas(niveles,categorias);
+            preguntas=pre.ListaPreguntas();
+            
+            Opciones op= new Opciones(niveles,preguntas);
+            opciones=op.ListaOpciones();
             
             System.out.println("\nIniciar el juego? ingrese si o no(en caso de ingresar no te volvera a pedir los datos iniciales)");
             String resp=entrada.next();

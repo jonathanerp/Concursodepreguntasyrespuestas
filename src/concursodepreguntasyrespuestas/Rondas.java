@@ -19,7 +19,7 @@ public class Rondas {
         this.ron=num;
     }
     int NumRondas () {
-        System.out.println("\nel numero de rondas son"+ron);
+        System.out.println("\nel numero de rondas son "+ron);
         return ron;   
     }
     

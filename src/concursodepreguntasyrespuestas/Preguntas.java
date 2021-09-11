@@ -13,16 +13,23 @@ import java.util.Scanner;
  * @author JOESR
  */
 public class Preguntas {
+    
     ArrayList <String> preguntas= new ArrayList<>();
     
     public Preguntas(ArrayList niveles,ArrayList categorias) {
         
         Scanner entrada=new Scanner(System.in);   
         
-        for (int i=0;i<categorias.size();i++){
-            System.out.println("\nIngrese la pregunta # "+(i+1)+ " que tenga un nivel de dificultad);  
-            String nombre=entrada.next();
-            niveles.add(nombre);
+        for (int i=0;i<niveles.size();i++){
+            for (int j=0;j<categorias.size();j++){
+                System.out.println("\nIngrese la pregunta # "+(j+1)+ " que tenga un nivel de dificultad "+niveles.get(i));  
+                String nombre=entrada.nextLine();
+                preguntas.add(nombre);
+            }
         }
+    }
+    ArrayList ListaPreguntas() {
+        System.out.println("\n"+preguntas);
+        return preguntas;
     }
 }

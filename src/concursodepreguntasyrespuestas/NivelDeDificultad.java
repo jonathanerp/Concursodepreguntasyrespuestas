@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author JOESR
  */
 public class NivelDeDificultad {
-    ArrayList <String> niveles= new ArrayList<>();
+    ArrayList <String> nivel= new ArrayList<>();
     
     public NivelDeDificultad() {
         
@@ -21,16 +21,16 @@ public class NivelDeDificultad {
         
         for (int i=0;i<5;i++){
             System.out.println("\ningrese el nombre del nivel de dificultad #"+(i+1));  
-            String nombre=entrada.next();
-            niveles.add(nombre);
+            String nombre=entrada.nextLine();
+            nivel.add(nombre);
         }
     }
     ArrayList ListaNiveles() {
-        System.out.println("\n"+niveles);
-        return niveles;
+        System.out.println("\n"+nivel);
+        return nivel;
     }
     int NumNiveles() {
-        int num=niveles.size();
+        int num=nivel.size();
         System.out.println("\ntiene "+num+ " niveles de dificultad");
         return num;
     }

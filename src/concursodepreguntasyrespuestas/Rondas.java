@@ -16,7 +16,7 @@ public class Rondas {
     int ron;
     
     public Rondas(int num) {
-        this.ron=5;
+        this.ron=num;
     }
     int NumRondas () {
         System.out.println("\nel numero de rondas son"+ron);

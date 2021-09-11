@@ -6,24 +6,28 @@
 package concursodepreguntasyrespuestas;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author JOESR
  */
 public class NivelDeDificultad {
-    ArrayList <Integer> niveles= new ArrayList<>();
+    ArrayList <String> niveles= new ArrayList<>();
     
     public NivelDeDificultad() {
-                
-        for (int i=1;i<6;i++){
-            System.out.println("\nSe creo el nivel de dificultad #"+(i));  
-            int nombre=i;
+        
+        Scanner entrada=new Scanner(System.in);        
+        
+        for (int i=0;i<5;i++){
+            System.out.println("\ningrese el nombre del nivel de dificultad #"+(i+1));  
+            String nombre=entrada.next();
             niveles.add(nombre);
         }
     }
-    void ListaNiveles() {
+    ArrayList ListaNiveles() {
         System.out.println("\n"+niveles);
+        return niveles;
     }
     int NumNiveles() {
         int num=niveles.size();

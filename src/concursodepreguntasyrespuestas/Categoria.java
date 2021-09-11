@@ -18,11 +18,13 @@ public class Categoria {
         
         for (int i=1;i<(num+1);i++){
             System.out.println("\nSe creo la categoria #"+(i));  
-            int nombre=i;
-            categorias.add(nombre);
+            System.out.println("\ningrese el nombre del nivel de dificultad #"+(i));  
+            String nombre=entrada.next();
+            niveles.add(nombre);
         }
     }
-    void ListaCategorias() {
+    ArrayList ListaCategorias() {
         System.out.println("\n"+categorias);
+        return categorias;
     }
 }

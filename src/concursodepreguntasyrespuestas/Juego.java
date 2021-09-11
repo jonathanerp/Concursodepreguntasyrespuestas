@@ -5,6 +5,7 @@
  */
 package concursodepreguntasyrespuestas;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,10 +13,10 @@ import java.util.Scanner;
  * @author JOESR
  */
 public class Juego {
+    static ArrayList <String> niveles= new ArrayList<>();
+    static ArrayList <Integer> categorias= new ArrayList<>();
+    
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         int respw=1;
@@ -27,18 +28,24 @@ public class Juego {
             jug.NombreJugador();
         
             NivelDeDificultad niv= new NivelDeDificultad();
-            niv.ListaNiveles();
+            niveles=niv.ListaNiveles();
             int num=niv.NumNiveles();
         
             Categoria cat= new Categoria(num);
-            cat.ListaCategorias();
+            categorias=cat.ListaCategorias();
         
             Rondas ron= new Rondas(num);
             int numron=ron.NumRondas();
             
+            Preguntas pre= new Preguntas(niveles,categorias);
+            
             System.out.println("\nIniciar el juego? ingrese si o no(en caso de ingresar no te volvera a pedir los datos iniciales)");
             String resp=entrada.next();
-            
+            if("si".equals(resp)){
+                for (int i=1;i<(numron+1);i++){
+                    System.out.println("Empezamos ");
+                }
+            }
         }
     }
 }

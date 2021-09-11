@@ -17,6 +17,7 @@ public class Juego {
     static ArrayList <Integer> categorias= new ArrayList<>();
     static ArrayList <String> preguntas= new ArrayList<>();
     static ArrayList <String> opciones= new ArrayList<>();
+    static ArrayList <String> respuestas= new ArrayList<>();
     
     public static void main(String[] args) {
         
@@ -44,11 +45,16 @@ public class Juego {
             Opciones op= new Opciones(niveles,preguntas);
             opciones=op.ListaOpciones();
             
+            //Respuesta re= new Respuesta(niveles,preguntas);
+            
             System.out.println("\nIniciar el juego? ingrese si o no(en caso de ingresar no te volvera a pedir los datos iniciales)");
             String resp=entrada.next();
             if("si".equals(resp)){
+                int n=0;
                 for (int i=1;i<(numron+1);i++){
-                    System.out.println("Empezamos ");
+                    
+                    System.out.println("Empezamos con la ronda # "+(i)+"la cual contiene 5 preguntas con nivel de dificultad"+niveles.get(n));
+                    
                 }
             }
         }

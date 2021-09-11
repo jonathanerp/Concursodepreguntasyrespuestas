@@ -13,24 +13,25 @@ import java.util.Scanner;
  * @author JOESR
  */
 public class Respuesta {
-     ArrayList <String> respuesta= new ArrayList<>();
+     ArrayList <Integer> respuesta= new ArrayList<>();
     
     public Respuesta(ArrayList niveles,ArrayList preguntas) {
         
         Scanner entrada=new Scanner(System.in);   
+        int k=0;
         
         for (int i=0;i<preguntas.size();i++){
-            for (int j=0;j<4;j++){
-                System.out.println("\nIngrese la opcion # "+(j+1)+ " para la pregunta "+preguntas.get(i));  
-                String nombre=entrada.nextLine();
-                opciones.add(nombre);
-                
+            if(i==5 || i==10 || i==15 || i==20){
+                k++;
             }
+            System.out.println("\nIngrese el numero de la opcion correcta para la pregunta "+preguntas.get(i)+" la cual tiene nivel de dificultad "+niveles.get(k));  
+            int rep=entrada.nextInt();
+            respuesta.add(rep);
         }
     }
-    ArrayList ListaOpciones() {
-        System.out.println("\n"+opciones);
-        return opciones;
+    ArrayList ListaRespuesta() {
+        System.out.println("\n"+respuesta);
+        return respuesta;
     }
     
 }

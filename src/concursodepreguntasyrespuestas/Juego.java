@@ -60,19 +60,20 @@ public class Juego {
                     NumAleatoriosSinRepetir nu= new NumAleatoriosSinRepetir();
                     numaleatorios=nu.ListaNumAleatoriosSinRepetir();
                     
+                    System.out.println("\nEmpezamos con la ronda # "+(i+1)+" la cual contiene 5 preguntas con nivel de dificultad "+niveles.get(n));
+                    
                     for (int j=0;j<5;j++){
                         
-                        System.out.println("\nEmpezamos con la ronda # "+(i+1)+" la cual contiene 5 preguntas con nivel de dificultad "+niveles.get(n));
                         System.out.println("\nla pregunta es :"+preguntas.get(numaleatorios.get(j)+(5*i)));
-                        System.out.println("\n opcion 1 :"+opciones.get((3*(numaleatorios.get(j)+i))+(numaleatorios.get(j)+i)));
-                        System.out.println("\n opcion 2 :"+opciones.get((3*(numaleatorios.get(j)+i))+(numaleatorios.get(j)+1+i)));
-                        System.out.println("\n opcion 3 :"+opciones.get((3*(numaleatorios.get(j)+i))+(numaleatorios.get(j)+2+i)));
-                        System.out.println("\n opcion 4 :"+opciones.get((3*(numaleatorios.get(j)+i))+(numaleatorios.get(j)+3+i)));
+                        System.out.println("\n opcion 1 :"+opciones.get((3*(numaleatorios.get(j)+(5*i)))+(numaleatorios.get(j)+(5*i))));
+                        System.out.println("\n opcion 2 :"+opciones.get((3*(numaleatorios.get(j)+(5*i)))+(numaleatorios.get(j)+1+(5*i))));
+                        System.out.println("\n opcion 3 :"+opciones.get((3*(numaleatorios.get(j)+(5*i)))+(numaleatorios.get(j)+2+(5*i))));
+                        System.out.println("\n opcion 4 :"+opciones.get((3*(numaleatorios.get(j)+(5*i)))+(numaleatorios.get(j)+3+(5*i))));
                         System.out.println("\ningresa tu respuesta con el # de la opcion correcta");
                         int resp1=entrada.nextInt();
                         respuestasjugador.add(resp1);
                         
-                        if(resp1 == respuestas.get(numaleatorios.get(j))){
+                        if(resp1 == respuestas.get(numaleatorios.get(j))+(5*i)){
                             System.out.println("\n correcto ganaste "+(n+1)+" punto");
                             acu.agregarAcumulado(n+1);
                         }

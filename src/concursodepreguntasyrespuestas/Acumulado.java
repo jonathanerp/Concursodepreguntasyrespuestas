@@ -5,10 +5,20 @@
  */
 package concursodepreguntasyrespuestas;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JOESR
  */
 public class Acumulado {
+    ArrayList <Integer> acumulado= new ArrayList<>();
+    
+    public Acumulado(){
+    
+    }
+    void agregarAcumulado(int punto) {
+        acumulado.add(punto);
+    }
     
 }

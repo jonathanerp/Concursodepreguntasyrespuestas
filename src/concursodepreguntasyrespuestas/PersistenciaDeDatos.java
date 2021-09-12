@@ -30,7 +30,7 @@ public class PersistenciaDeDatos {
         File archivo = new File("D:\\persistenciadedatos.txt");
         try {
             PrintWriter pc = new PrintWriter(archivo);
-            pc.println("\nFelicidades Jugador "+jugador+" ganaste el juego con "+total+" Puntos");
+            pc.println("\nFelicidades Jugador "+jugador+" ganaste con un total de "+total+" Puntos");
             
             for (int i=0;i<ListaPremios.size();i++){
                  pc.println("\nCATEGORIA # "+i+" RONDA  # "+i+" PUNTOS "+ListaPremios.get(i)+" GANADOS ");

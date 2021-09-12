@@ -26,7 +26,7 @@ public class Acumulado {
             suma=suma+(int)ListaPremios.get(i);
             
         }
-        System.out.println("la suma de los puntos da :"+suma);
+        System.out.println("la suma de los puntos da :"+suma+" puntos Puntaje Perfecto");
         return suma;
     }
 }

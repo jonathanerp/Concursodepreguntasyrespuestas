@@ -24,13 +24,14 @@ public class Juego {
     
     public static void main(String[] args) {
         
+        String jugador;
         int respw=1;
         while(respw==1){
             
             Scanner entrada=new Scanner(System.in);
             
             Jugador jug= new Jugador();
-            jug.NombreJugador();
+            jugador=jug.NombreJugador();
         
             NivelDeDificultad niv= new NivelDeDificultad();
             niveles=niv.ListaNiveles();
@@ -55,36 +56,39 @@ public class Juego {
             String resp=entrada.next();
             
             if("si".equals(resp)){
-                int n=0, resp1, ale=0;
+                int n=0, resp1, ale=0,total=0;
+      
                 Acumulado acu= new Acumulado();
                 Premios premios = new Premios();
                 
                 for (int i=0;i<numron;i++){
                     
                     ale=(int)(Math.random()*5);
-                    System.out.println("\ntu nemero aleatorio es : "+ale);
+                    System.out.println("\ntu numero aleatorio es : "+ale);
                     
                     System.out.println("\nEmpezamos con la ronda # "+(i+1)+" la cual contiene 5 preguntas con nivel de dificultad "+niveles.get(n)+" que pertenece a la categoria #: "+categorias.get(n));
                     
-                    System.out.println("\nla pregunta es :"+preguntas.get(numaleatorios.get(ale)+(5*i)));
-                    System.out.println("\n opcion 1 :"+opciones.get((3*(numaleatorios.get(ale)+(5*i)))+(numaleatorios.get(ale)+(5*i))));
-                    System.out.println("\n opcion 2 :"+opciones.get((3*(numaleatorios.get(ale)+(5*i)))+(numaleatorios.get(ale)+1+(5*i))));
-                    System.out.println("\n opcion 3 :"+opciones.get((3*(numaleatorios.get(ale)+(5*i)))+(numaleatorios.get(ale)+2+(5*i))));
-                    System.out.println("\n opcion 4 :"+opciones.get((3*(numaleatorios.get(ale)+(5*i)))+(numaleatorios.get(ale)+3+(5*i))));
+                    System.out.println("\nla pregunta es :"+preguntas.get(ale+(5*i)));
+                    System.out.println("\n opcion 1 :"+opciones.get((3*(ale+(5*i)))+(ale+(5*i))));
+                    System.out.println("\n opcion 2 :"+opciones.get((3*(ale+(5*i)))+(ale+1+(5*i))));
+                    System.out.println("\n opcion 3 :"+opciones.get((3*(ale+(5*i)))+(ale+2+(5*i))));
+                    System.out.println("\n opcion 4 :"+opciones.get((3*(ale+(5*i)))+(ale+3+(5*i))));
                     
                     System.out.println("\ningresa tu respuesta con el # de la opcion correcta");
                     resp1=entrada.nextInt();
                     respuestasjugador.add(resp1);
                         
-                    if(resp1 == respuestas.get(numaleatorios.get(ale)+(5*i))){
+                    if(resp1 == respuestas.get(ale+(5*i))){
                         System.out.println("\n correcto");
-                        System.out.println("\n felicidades ganaste la ronda #"+(i+1)+" por lo que te daremos "+(n+1)+"puntos");
+                        System.out.println("\n felicidades ganaste la ronda # "+(i+1)+" por lo que te daremos "+(n+1)+" puntos");
                         premios.agregarPremio(n+1);
                         
                         if(i==4){
                         System.out.println("\n felicidades ganaste el juego");
                         listapremios=premios.ListaPremios();
-                        acu.PuntosAcumulados(listapremios);
+                        total=acu.PuntosAcumulados(listapremios);
+                        PersistenciaDeDatos persistenciadatos = new PersistenciaDeDatos();
+                        persistenciadatos.datos(jugador,total,listapremios);
                         respw=0;
                         break;
                         }
@@ -97,7 +101,9 @@ public class Juego {
                         else{
                             System.out.println("\n te retiraste del juego");
                             listapremios=premios.ListaPremios();
-                            acu.PuntosAcumulados(listapremios);
+                            total=acu.PuntosAcumulados(listapremios);
+                            PersistenciaDeDatos persistenciadatos = new PersistenciaDeDatos();
+                            persistenciadatos.datos(jugador,total,listapremios);
                             respw=0;
                             break;
                         }                  

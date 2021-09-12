@@ -12,13 +12,21 @@ import java.util.ArrayList;
  * @author JOESR
  */
 public class Acumulado {
-    ArrayList <Integer> acumulado= new ArrayList<>();
+    
     
     public Acumulado(){
     
     }
-    void agregarAcumulado(int punto) {
-        acumulado.add(punto);
-    }
     
+    public int PuntosAcumulados(ArrayList ListaPremios) {
+        int suma =0;
+        
+        for (int i=0;i<ListaPremios.size();i++){
+            
+            suma=suma+(int)ListaPremios.get(i);
+            
+        }
+        System.out.println("la suma de los puntos da :"+suma);
+        return suma;
+    }
 }

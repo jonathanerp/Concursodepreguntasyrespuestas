@@ -3,7 +3,7 @@
 ## Bienvenido al repositorio del Concurso de Preguntas y Respuestas
 **Instrucciones:**
 
-Al momento de ejectar el programa te pedira:
+Al momento de ejecutar el programa te pedira:
 
 - Su nombre
 
